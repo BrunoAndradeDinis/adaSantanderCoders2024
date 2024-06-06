@@ -12,4 +12,6 @@
 - GitBranch
 - Merging Branches
 
-#@# mais um 
+## mais um 
+* comando git push
+* comando git pull
