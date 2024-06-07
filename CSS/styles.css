@@ -1,0 +1,54 @@
+  * {
+      margin: 0;
+      padding: 0;
+  }
+
+  :root {
+      font-size: 62.5%;
+  }
+
+  h2 {
+      color: hotpink;
+      background-color: #7fffd4;
+      font-size: 9.0rem;
+      text-decoration: solid;
+      text-align: justify;
+
+  }
+
+  h4 {
+      text-indent: 4.0rem;
+      text-transform: inherit;
+      font-size: 2.2rem;
+      color: rgb(158, 52, 245);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 2.5rem;
+  }
+
+
+
+  p {
+      font-size: 2.0rem;
+      text-align: justify;
+      text-indent: 4.0rem;
+      margin-top: 0rem;
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
+      margin-bottom: 2.5rem;
+
+  }
+
+  .bg {
+      height: 50rem;
+      width: 100%;
+      background-color: rgb(135, 222, 161);
+      background-image: url('https://images.unsplash.com/photo-1609075833903-7de82d17fdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+  }
+
+  table {
+    border-collapse: separate;
+    border: 1rem;
+  }

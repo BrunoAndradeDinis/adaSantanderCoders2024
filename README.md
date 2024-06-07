@@ -12,7 +12,14 @@
 - GitBranch
 - Merging Branches
 
-## mais um 
-* comando git push
-* comando git pull
-* comando git fetch
+## HTML
+- Introdução a HTML
+- Criando a Primeira página HTML
+- Principais Tags HTML (parte 1)
+- Principais Tags HTML (parte 2)
+- Tags de formação de Texto
+- Elementos semânticos do HTML5
+- Construihndo uma barra de Navegação
+- Tabelas
+- Formulários
+- Integração com CSS

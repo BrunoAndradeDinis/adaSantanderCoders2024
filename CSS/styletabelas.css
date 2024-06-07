@@ -1,0 +1,95 @@
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+}
+
+nav.menu {
+    /* position: fixed; */
+    background-color: white;
+    width: 100%;
+
+    z-index: 1;
+    margin-top: 0rem;
+}
+
+main {
+    padding-top: 0rem;
+    font-size: 1.6rem;
+    font-family: 'Rubik';
+}
+
+table,
+td,
+th {
+    border: 1px solid rgb(4, 4, 4);
+}
+
+
+
+table th {
+    background-color: aqua;
+}
+
+#finance {
+    margin-left: 2.5rem;;
+}
+
+#students {
+    margin-left: 2.5rem;
+}
+
+table {
+    font-size: 2rem;
+    border-collapse: separate;    
+
+}
+
+h1 {
+    color: hotpink;
+    text-align: center;
+    font-size: 9.0rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    
+}
+h3 {
+    padding: 0;
+    padding-left: 2.5rem;
+
+}
+ul {
+    list-style: circle;
+}
+
+.box {
+    height: 10.0rem;
+    width: 10.0rem;
+    border: 0.4rem solid rgb(20, 220, 220);
+    display: inline-block;
+    border-radius: 1.0rem;
+    position: relative;
+    flex: wrap;
+}
+
+img {
+    height: 10.0rem;
+    width: 10.0rem;
+    position: absolute;
+}
+
+.contact-list h2 {
+    position: sticky;
+    top: 0rem;
+    background-color: rgb(18, 208, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* .contact-list > h2 {
+    color: green;
+} */
+}

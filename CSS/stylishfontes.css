@@ -1,0 +1,49 @@
+h1 {
+    font-size: 80px;
+    text-align: center;
+
+    color: rgb(61, 55, 255);
+    font-family: 'Rubik', sans-serif;
+
+
+}
+
+
+h2 {
+    font-size: 70px;
+    text-align: center;
+    color: darkslateblue;
+    font-family: 'Rubik', sans-serif;
+}
+
+.tete {
+    background-image: url('https://pps.whatsapp.net/v/t61.24694-24/317716633_3383961101931351_6824040991978323349_n.jpg?ccb=11-4&oh=01_AdTfl4sxnTiWEl18X3amD-pAvP9mhQfnWAB7W-fZL5ZkTw&oe=647353F1');
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    border-radius: 5rem;
+    
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: 'Times new roman';
+    font-style: oblique;
+    color: rgb(189, 187, 187);
+    text-indent: 1.6rem;
+}
+
+p {
+    font-size: 2.0rem;
+    font-family: 'Times new roman';
+    text-align: justify;
+}
+
+footer {
+    font-size: 2.5rem;
+    font-family: 'Rubik';
+}

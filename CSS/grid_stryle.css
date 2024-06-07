@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+}
+.boxes {
+    height: calc(100vh);
+    position: relative;
+
+    display: grid;
+    justify-content: flex-start;
+    /* column-gap: 2;
+    row-gap: 4; */
+    gap: 2rem 4rem;
+    /* grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10fr; */
+    /* grid-template-columns: 2fr repeat(4, 1fr); */
+
+}
+
+.box {
+    font-size: 4rem;
+    min-height: 10rem;
+    min-width: 20rem;
+    background-color: chartreuse;
+    border: 1rem solid orange;
+    border-radius: 2%;
+    text-align: center;
+    color: white;
+   
+    
+}
