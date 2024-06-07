@@ -23,3 +23,17 @@
 - Tabelas
 - Formulários
 - Integração com CSS
+
+## CSS
+- Introdução a CSS e história da web
+- Cores, background e textos
+- Fontes, medidas e links
+- Listas, tableas, box model e display
+- Position e introdução a flexbox
+- Flexbox e alinhamentos
+- Seletores, responsividade e animações
+- Grid Layout e unidade "fr"
+- Compilando conceitos e criando um projeto (parte I)
+- Compilando conceitos e criando um projeto (parte II)
+
+- 
