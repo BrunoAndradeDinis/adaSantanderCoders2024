@@ -36,4 +36,6 @@
 - Compilando conceitos e criando um projeto (parte I)
 - Compilando conceitos e criando um projeto (parte II)
 
-- 
+## Lógica de programação com Javascript
+- Javascript básico I: Gerenciamento de memória dinâmica
+- Javascript básico II: condicionais
