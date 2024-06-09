@@ -240,3 +240,344 @@ console.log('10' - '4' - '3' - 2 + '5') //15
 
 ## 2. Javascript básico II: condicionais
 
+### operadores booleanos
+Em JavaScript, os operadores booleanos são utilizados para avaliar expressões e retornar um valor verdadeiro (true) ou falso (false). Esses operadores são comumente usados em estruturas de controle de fluxo, como condicionais e loops, para tomar decisões com base nas condições especificadas. Os principais operadores booleanos em JavaScript são && (AND), || (OR) e ! (NOT).
+
+- AND (&&): Retorna verdadeiro se ambas as expressões forem verdadeiras.
+```
+var x = 5;
+var y = 10;
+var z = 15;
+if (x < y && y < z) {
+    console.log("x é menor que y e y é menor que z");
+}
+```
+
+- OR (||): Retorna verdadeiro se pelo menos uma das expressões for verdadeira.
+```
+var temperature = 25;
+if (temperature > 30 || temperature < 10) {
+    console.log("A temperatura está extremamente alta ou baixa");
+}
+```
+
+- NOT (!): Inverte o valor de uma expressão booleana.
+
+```
+var loggedIn = false;
+if (!loggedIn) {
+    console.log("O usuário não está logado");
+}
+```
+
+Além desses operadores, também existe o operador de igualdade estrita (===), que retorna verdadeiro se os operandos forem iguais e do mesmo tipo, e o operador de diferença estrita (!==), que retorna verdadeiro se os operandos não forem iguais e/ou não forem do mesmo tipo.
+
+Exemplos da aula:
+
+```
+// Operadores booleanos: Comparações
+
+const numero1 = 10
+const numero2 = 12
+
+console.log(numero1 == numero2) // false
+console.log(numero1 === numero2) // false
+console.log(numero1 === '10') // false - valida também o tipo do dado
+console.log(numero1 == '10') // false - valida o valor
+
+console.log(numero1 !== numero2) // true
+console.log(numero1 != '10') // false
+
+console.log(numero1 >= numero2)
+
+const idadePessoa1 = 16
+const idadePessoa2 = 39
+
+console.log(idadePessoa1 >= 18 && idadePessoa2 >= 18)
+console.log(idadePessoa1 >= 18 || idadePessoa2 >= 18)
+
+console.log(!true) // not/negação
+
+console.log(!(idadePessoa1 >= 18)) // retorna verdadeiro se a pessoa for meno de idade
+```
+
+
+### Estruturas de controle de fluxos e condicionais
+Em JavaScript, as estruturas de controle de fluxo são usadas para determinar o fluxo de execução do programa com base em condições ou iterações. As estruturas de controle de fluxo mais comuns são os condicionais (como if, else if, else) e os loops (como for, while, do-while). Aqui estão exemplos de como usar essas estruturas:
+- Condicional if:
+```
+var idade = 18;
+if (idade >= 18) {
+    console.log("Você é maior de idade.");
+} else {
+    console.log("Você é menor de idade.");
+}
+
+```
+
+- Condicional else if:
+```
+var hora = 14;
+if (hora < 12) {
+    console.log("Bom dia!");
+} else if (hora < 18) {
+    console.log("Boa tarde!");
+} else {
+    console.log("Boa noite!");
+}
+
+```
+- Loop for:
+
+
+```
+for (var i = 0; i < 5; i++) {
+    console.log("O valor de i é " + i);
+}
+
+```
+- Loop while:
+
+```
+var contador = 0;
+while (contador < 3) {
+    console.log("Contador: " + contador);
+    contador++;
+}
+
+```
+
+Essas estruturas de controle de fluxo permitem que você controle o comportamento do seu programa com base em condições e iterações, tornando seu código mais dinâmico e adaptável. 
+
+Exemplos da aula
+
+```
+const prompt = require('readline-sync')
+
+const idade = Number(prompt.question('Qual eh a sua idade? \n'))
+
+const ehMaiorDeIdade = idade >= 18
+
+console.log(ehMaiorDeIdade)
+
+// Estrutura condicional: if/else
+
+if(ehMaiorDeIdade){
+  // faça alguma coisa
+  console.log('Você é maior de idade!')
+} else {
+  console.log("Você é menor de idade.")
+}
+
+const mediaDoAluno = 10
+
+// Média >=7 => aprovado
+// Média < 7 e Média >=5 => Prova final 
+// Média < 5 => Reprovvado
+
+if(mediaDoAluno >= 7){
+  console.log("Aprovado!")
+  console.log("Parabéns! 😁👏")
+} else if ( mediaDoAluno >= 5){
+  console.log("Prova final!")
+} else {
+  console.log("Reprovado")
+}
+
+
+// 1. Preciso ser maior de idade
+// 2. Preciso ter uma CNH
+
+const idadeDaPessoa = 18
+const temCNH = true
+
+if (idadeDaPessoa >= 18 && temCNH){
+  console.log("Você pode dirigir!")
+} else {
+  console.log("Você não pode dirigir!")
+}
+```
+
+Além das estruturas de controle de fluxo mencionadas anteriormente (condicionais e loops), JavaScript também oferece outras estruturas úteis para controlar o fluxo de execução do programa:
+
+- Switch Case:
+O switch é usado para avaliar uma expressão e executar o bloco de código associado ao caso que corresponde ao valor da expressão.
+
+```
+var dia = 3;
+switch (dia) {
+    case 1:
+        console.log("Domingo");
+        break;
+    case 2:
+        console.log("Segunda-feira");
+        break;
+    case 3:
+        console.log("Terça-feira");
+        break;
+    // Outros casos...
+    default:
+        console.log("Dia inválido");
+}
+
+```
+
+ - Break e Continue:
+O break é usado para sair de uma estrutura de controle (como switch ou loop) e o continue é usado para pular para a próxima iteração de um loop.
+
+```
+for (var i = 0; i < 5; i++) {
+    if (i === 3) {
+        break; // Sai do loop quando i for igual a 3
+    }
+    console.log("i: " + i);
+}
+
+for (var i = 0; i < 5; i++) {
+    if (i === 2) {
+        continue; // Pula para a próxima iteração quando i for igual a 2
+    }
+    console.log("i: " + i);
+}
+
+```
+
+- Try Catch Finally:
+As estruturas try, catch e finally são usadas para manipulação de exceções (erros) em JavaScript.
+
+```
+try {
+    // Bloco de código que pode gerar um erro
+    var resultado = soma(10, "abc"); // Erro: "abc" não é um número
+} catch (erro) {
+    // Bloco de código para tratar o erro
+    console.log("Ocorreu um erro: " + erro.message);
+} finally {
+    // Bloco de código opcional que é sempre executado, independentemente de ocorrer um erro ou não
+    console.log("Finalizando...");
+}
+
+```
+
+Essas são algumas das outras estruturas de controle de fluxo em JavaScript que permitem controlar o fluxo de execução do seu código de maneira mais eficiente e robusta.
+
+E essas são consideradas estruturas modernas
+
+- For...in:
+O loop for...in é usado para iterar sobre as propriedades de um objeto.
+
+```
+var pessoa = { nome: "João", idade: 30, cidade: "São Paulo" };
+for (var propriedade in pessoa) {
+    console.log(propriedade + ": " + pessoa[propriedade]);
+}
+
+```
+
+- For...of:
+O loop for...of é usado para iterar sobre objetos iteráveis (como arrays e strings).
+```
+var numeros = [1, 2, 3, 4, 5];
+for (var numero of numeros) {
+    console.log(numero);
+}
+
+```
+
+JavaScript introduziu estruturas de repetição modernas com for...of, for await...of para iterar sobre iteráveis assíncronos, e Array.prototype.forEach() para iterar sobre arrays.
+```
+// Exemplo com for...of
+const frutas = ["Maçã", "Banana", "Morango"];
+for (const fruta of frutas) {
+    console.log(fruta);
+}
+
+// Exemplo com forEach()
+frutas.forEach(function(fruta) {
+    console.log(fruta);
+});
+
+```
+
+- Operador Ternário:
+O operador ternário (? :) é uma forma concisa de expressar uma operação condicional.
+```
+var idade = 20;
+var status = (idade >= 18) ? "Maior de idade" : "Menor de idade";
+console.log(status);
+
+```
+
+- Labelled Statements:
+Você pode rotular loops e blocos para referenciá-los de forma explícita.
+```
+outerloop:
+for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+        if (i === 1 && j === 1) {
+            break outerloop;
+        }
+        console.log('i = ' + i + ', j = ' + j);
+    }
+}
+
+```
+
+ - Async/Await:
+Essas palavras-chave são usadas para lidar com operações assíncronas de forma síncrona, simplificando o código e tornando-o mais legível.
+
+```
+async function obterDados() {
+    try {
+        let resposta = await fetch('https://api.exemplo.com/dados');
+        let dados = await resposta.json();
+        console.log(dados);
+    } catch (erro) {
+        console.log('Ocorreu um erro: ', erro);
+    }
+}
+
+```
+
+### Thruty e Falsy
+
+Em JavaScript, valores "truthy" e "falsy" referem-se à maneira como certos valores são avaliados em contextos booleanos, como em instruções condicionais (if), operadores lógicos (&&, ||), entre outros. Valores "truthy" são aqueles que são considerados como verdadeiros quando avaliados como booleanos, enquanto valores "falsy" são aqueles que são considerados como falsos.
+
+Aqui está uma lista dos principais valores "falsy" em JavaScript:
+
+false
+0 (zero)
+"" (string vazia)
+null
+undefined
+NaN (Not a Number)
+Todos os outros valores que não estão nesta lista são considerados "truthy", incluindo, por exemplo, strings não vazias, números diferentes de zero, objetos, arrays, funções, etc.
+
+```
+var x = 10;
+
+if (x) {
+    console.log("x é truthy"); // Esta condição será verdadeira, pois x contém um valor diferente de zero
+}
+
+var y = "";
+
+if (!y) {
+    console.log("y é falsy"); // Esta condição será verdadeira, pois y é uma string vazia, que é falsy
+}
+
+var z = null;
+
+if (z === null) {
+    console.log("z é falsy"); // Esta condição será verdadeira, pois z é null, que é falsy
+}
+
+var objeto = {};
+
+if (objeto) {
+    console.log("objeto é truthy"); // Esta condição será verdadeira, pois objeto é um objeto vazio, que é truthy
+}
+
+```
+
+Entender os conceitos de "truthy" e "falsy" é importante ao lidar com expressões booleanas em JavaScript, pois permite escrever código mais conciso e expressivo.
