@@ -39,3 +39,13 @@
 ## Lógica de programação com Javascript
 - Javascript básico I: Gerenciamento de memória dinâmica
 - Javascript básico II: condicionais
+
+## React - Básico
+- Introdução ao ReactJS
+- Exercício de fixação I
+- React Legado I - Componentização
+- Exercício de fixação II
+- React Legado II - Props e Estados
+- Exercício de fixação III
+- React Legado III - Ciclo de vida
+- Exercício de fixação IV
