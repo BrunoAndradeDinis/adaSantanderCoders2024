@@ -201,5 +201,139 @@ Link: [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
 - Abstração de componentes de interface 
 
 ## React Legado II - Props e Estados
+
+No React, tanto os props quanto os estados são fundamentais para o desenvolvimento de componentes dinâmicos e interativos.
+
+### Props (Propriedades)
+Props são atributos passados de um componente pai para um componente filho. Eles são imutáveis (ou seja, somente leitura) dentro do componente filho. As props são usadas para passar dados de um componente para outro e são definidas como atributos no componente pai.
+
+Exemplo:
+Suponha que temos um componente Pai que passa uma propriedade nome para um componente Filho.
+
+```
+// Componente Pai
+import React from 'react';
+import Filho from './Filho';
+
+function Pai() {
+  return (
+    <div>
+      <Filho nome="João" />
+    </div>
+  );
+}
+
+export default Pai;
+
+// Componente Filho
+import React from 'react';
+
+function Filho(props) {
+  return (
+    <div>
+      <p>Olá, {props.nome}!</p>
+    </div>
+  );
+}
+
+export default Filho;
+
+```
+
+Neste exemplo, o componente Pai passa a propriedade nome com o valor "João" para o componente Filho, que então exibe "Olá, João!".
+
+### Estados 
+Estados são variáveis que pertencem a um componente e controlam seu comportamento e renderização. Ao contrário das props, os estados são mutáveis e são gerenciados pelo próprio componente. Quando um estado é alterado, o componente é re-renderizado para refletir essa mudança.
+
+Exemplo:
+Suponha que queremos criar um contador simples que seja um componente do React e mantenha o número de cliques como estado interno.
+
+```
+import React, { useState } from 'react';
+
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    <div>
+      <p>Você clicou {contador} vezes</p>
+      <button onClick={() => setContador(contador + 1)}>
+        Clique aqui
+      </button>
+    </div>
+  );
+}
+
+export default Contador;
+
+```
+
+Então, no exemplo do contador, nós usamos uma coisinha chamada useState que é como um armário onde guardamos informações sobre o nosso contador. Começamos com ele valendo zero, porque não clicamos em nada ainda, né? E quando a gente clica no botão, a função setContador dá uma atualizada nesse valor. Toda vez que apertamos o botão, o número aumenta e a tela se atualiza pra mostrar o novo valor.
+
+Saca só, props são como mensagens que um componente passa para o outro, tipo, o pai fala pro filho o que ele precisa saber. E estados são como memórias internas do componente, são como anotações que ele faz pra se lembrar de coisas que mudam, tipo esse contador que tá sempre aumentando.
  
 ## React Legado III - Ciclo de vida
+
+O ciclo de vida no React se refere ao conjunto de fases pelas quais um componente passa desde sua criação até sua remoção da interface do usuário. Isso permite que os desenvolvedores controlem o comportamento do componente em diferentes momentos de sua existência.
+
+Antes da versão 16.3 do React, havia três fases principais no ciclo de vida dos componentes de classe: montagem, atualização e desmontagem. Com a introdução dos hooks, o ciclo de vida dos componentes funcionais também passou a ser mais granular.
+
+Vou explicar o ciclo de vida dos componentes de classe, que é o mais tradicional:
+
+Montagem (Mounting):
+
+constructor(): O método constructor é chamado antes que o componente seja montado. É usado para inicializar o estado e vincular métodos de evento.
+render(): O método render é obrigatório e retorna o JSX que representa o componente.
+componentDidMount(): É chamado imediatamente após o componente ser montado no DOM. É frequentemente usado para fazer solicitações de dados ou configurar temporizadores.
+Atualização (Updating):
+
+shouldComponentUpdate(): É chamado antes de renderizar novamente o componente. Pode ser usado para otimizar a renderização, evitando atualizações desnecessárias.
+render(): Renderiza novamente o componente com as atualizações.
+componentDidUpdate(): É chamado depois que o componente é renderizado novamente no DOM. É útil para realizar operações que dependem da atualização do DOM, como a atualização de um plugin externo.
+Desmontagem (Unmounting):
+
+componentWillUnmount(): É chamado imediatamente antes do componente ser removido do DOM. É usado para limpar recursos como temporizadores ou cancelar solicitações de rede.
+Além desses, existem métodos adicionais que lidam com erros (componentDidCatch()) e mudanças nas props (componentDidUpdate() e getDerivedStateFromProps()).
+
+Com o uso de hooks em componentes funcionais, temos o equivalente a muitos desses métodos do ciclo de vida. Por exemplo, o hook useEffect é usado para substituir componentDidMount, componentDidUpdate e componentWillUnmount.
+
+Em resumo, o ciclo de vida no React oferece aos desenvolvedores controle sobre o comportamento dos componentes em diferentes estágios de sua vida, permitindo que executem ações específicas conforme necessário.
+
+
+Basicamente é o fluxo de renderização dos componentes do React. Em outras palavras, trata-se de todas as etapas pelas quais um componente passa desde o seu surgimento (montagem) até o seu desaparecimento (desmontagem) na aplicação.
+
+Conhecimento essencial para quem trabalhou no React. Ter esse conhecimento irá te ajudar a otimizar mais as suas aplicações.
+
+#### Fases do ciclo de vida de um componente React
+
+O ciclo de vida de um componente apresenta três fases:
+
+Etapas do ciclo de vida de componentes REACT:
+1. Montagem
+    Consiste no momento em que o componente é criado em tela (montado no DOM).
+    Nesse momento o componente
+    - Recebe as props
+    - Realiza chamadas HTTP
+    - Inicializa seus estatos (states)
+2. Atualização
+    - Sempre que alguma mudança ocorra no componente, seja por alguma alteração de uma prop ou pela alteração de algum estado, passaremos por esta etapa do ciclo de vida
+3. Desmontagem
+    - Consiste no momento em que o componente é removido da tela por não ser mais necessário. Isso acontece quando mudamos de página ou quando alguma interação do usuário implica na remoção de um determinado componente da tela para dar espaço a outro componente, por exemplo. 
+
+Todas as fases/etapas do ciclo de vida irão dispor de alguns métodos que nos permitem acessá-las.
+
+Métodos do ciclo de vida:
+1. Montagem
+- ```constructor```
+- ```componentWillMount```
+- ```render```
+- ```componentDidMount```
+
+2. Atualização
+- ```shouldComponentUpdate```: um método que será chamado sempre que houver uma mudança de props ou estados. Caso o seu retorno seja ```true```, ocorrerá uma atualização do componente. Caso o retorno seja ```false```, nada irá acontecer.
+- ```componentWillUpdate```: O processo de atualiação do componente foi iniciado.
+- ```render```: renderização do componente.
+- ```componentDidUpdate```: Componente atualizado
+
+3. Desmontagem
+- ```componentWillUnmount```: Método chamado pouco antes do momento em que o componente é desmontado (removido) da tela. Pode ser muito útil para, por exemplo:
